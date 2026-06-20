@@ -168,12 +168,10 @@
       border: 1px solid var(--border);
     }
     .exp-logo img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; padding: 10px; display: block; }
-    /* All four tiles use white for consistency */
     .exp-logo.citi,
     .exp-logo.purdue,
     .exp-logo.emeritus,
     .exp-logo.publicis { background: #ffffff; }
-    /* Per-logo zoom — tuned to each source image's internal padding */
     .exp-logo.citi img { transform: scale(1.15); }
     .exp-logo.purdue img { padding: 6px; transform: scale(1.25); }
     .exp-logo.emeritus img { padding: 6px; transform: scale(1.1); }
@@ -236,7 +234,7 @@
 
     /* SKILLS */
     .skills-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 22px; margin-top: 50px;
     }
     .skill-group {
@@ -244,9 +242,38 @@
       box-shadow: var(--shadow);
     }
     .skill-group h4 {
-      color: var(--accent); margin-bottom: 16px;
+      color: var(--accent); margin-bottom: 18px;
       font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase;
     }
+    .skill-icons {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(78px, 1fr));
+      gap: 10px;
+    }
+    .skill-tile {
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      padding: 14px 6px;
+      border-radius: 10px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+      text-align: center;
+    }
+    .skill-tile:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+    .skill-tile img {
+      width: 30px; height: 30px; object-fit: contain; display: block;
+    }
+    .skill-tile .fallback {
+      width: 30px; height: 30px; border-radius: 6px;
+      background: var(--accent-soft); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.8rem; letter-spacing: 0.02em;
+    }
+    .skill-tile span.label {
+      font-size: 0.72rem; color: var(--ink);
+      font-weight: 500; line-height: 1.2;
+    }
+    /* Methods chips stay as pills since these are concepts not products */
     .skill-chips { display: flex; flex-wrap: wrap; gap: 8px; }
     .skill-chip {
       background: var(--bg-soft); padding: 6px 13px;
@@ -493,7 +520,9 @@
     </div>
 
     <div class="work-card reveal">
-      <div class="work-thumb rshiny">Wellness Tourism Package</div>
+      <div class="work-thumb rshiny">
+        <img src="assets/rshiny-thumbnail.png" alt="Wellness Tourism R Shiny app preview" onerror="this.style.display='none'; this.parentElement.textContent='Wellness Tourism Package';" />
+      </div>
       <div class="work-body">
         <div class="work-tag">R Shiny App</div>
         <h3>Wellness Tourism Package — Customer Segmentation</h3>
@@ -550,51 +579,51 @@
 
     <div class="skill-group reveal">
       <h4>Data & Analytics</h4>
-      <div class="skill-chips">
-        <span class="skill-chip">SQL</span>
-        <span class="skill-chip">Python</span>
-        <span class="skill-chip">PySpark</span>
-        <span class="skill-chip">SAS Studio</span>
-        <span class="skill-chip">Excel</span>
+      <div class="skill-icons">
+        <div class="skill-tile"><img src="https://cdn.simpleicons.org/postgresql" alt="SQL" onerror="this.outerHTML='<div class=\'fallback\'>SQL</div>';" /><span class="label">SQL</span></div>
+        <div class="skill-tile"><img src="https://cdn.simpleicons.org/python" alt="Python" onerror="this.outerHTML='<div class=\'fallback\'>PY</div>';" /><span class="label">Python</span></div>
+        <div class="skill-tile"><img src="https://cdn.simpleicons.org/apachespark" alt="PySpark" onerror="this.outerHTML='<div class=\'fallback\'>PS</div>';" /><span class="label">PySpark</span></div>
+        <div class="skill-tile"><img src="https://cdn.simpleicons.org/sas" alt="SAS Studio" onerror="this.outerHTML='<div class=\'fallback\'>SAS</div>';" /><span class="label">SAS Studio</span></div>
+        <div class="skill-tile"><img src="https://cdn.simpleicons.org/microsoftexcel" alt="Excel" onerror="this.outerHTML='<div class=\'fallback\'>XL</div>';" /><span class="label">Excel</span></div>
       </div>
     </div>
 
     <div class="skill-group reveal">
       <h4>Visualization & BI</h4>
-      <div class="skill-chips">
-        <span class="skill-chip">Tableau</span>
-        <span class="skill-chip">Power BI</span>
-        <span class="skill-chip">MS Office</span>
+      <div class="skill-icons">
+        <div class="skill-tile"><img src="https://cdn.simpleicons.org/tableau" alt="Tableau" onerror="this.outerHTML='<div class=\'fallback\'>TB</div>';" /><span class="label">Tableau</span></div>
+        <div class="skill-tile"><img src="https://cdn.simpleicons.org/powerbi" alt="Power BI" onerror="this.outerHTML='<div class=\'fallback\'>PBI</div>';" /><span class="label">Power BI</span></div>
+        <div class="skill-tile"><img src="https://cdn.simpleicons.org/microsoftoffice" alt="MS Office" onerror="this.outerHTML='<div class=\'fallback\'>MS</div>';" /><span class="label">MS Office</span></div>
       </div>
     </div>
 
     <div class="skill-group reveal">
       <h4>Marketing Analytics</h4>
-      <div class="skill-chips">
-        <span class="skill-chip">Google Analytics (GA4)</span>
-        <span class="skill-chip">Adobe Analytics</span>
-        <span class="skill-chip">Google Ads</span>
-        <span class="skill-chip">Meta Ads</span>
-        <span class="skill-chip">LinkedIn Ads</span>
+      <div class="skill-icons">
+        <div class="skill-tile"><img src="https://cdn.simpleicons.org/googleanalytics" alt="Google Analytics" onerror="this.outerHTML='<div class=\'fallback\'>GA</div>';" /><span class="label">Google Analytics</span></div>
+        <div class="skill-tile"><img src="https://cdn.simpleicons.org/adobe" alt="Adobe Analytics" onerror="this.outerHTML='<div class=\'fallback\'>AA</div>';" /><span class="label">Adobe Analytics</span></div>
+        <div class="skill-tile"><img src="https://cdn.simpleicons.org/googleads" alt="Google Ads" onerror="this.outerHTML='<div class=\'fallback\'>GAd</div>';" /><span class="label">Google Ads</span></div>
+        <div class="skill-tile"><img src="https://cdn.simpleicons.org/meta" alt="Meta Ads" onerror="this.outerHTML='<div class=\'fallback\'>M</div>';" /><span class="label">Meta Ads</span></div>
+        <div class="skill-tile"><img src="https://cdn.simpleicons.org/linkedin" alt="LinkedIn Ads" onerror="this.outerHTML='<div class=\'fallback\'>in</div>';" /><span class="label">LinkedIn Ads</span></div>
       </div>
     </div>
 
     <div class="skill-group reveal">
       <h4>MarTech & CRM</h4>
-      <div class="skill-chips">
-        <span class="skill-chip">Salesforce</span>
-        <span class="skill-chip">HubSpot</span>
-        <span class="skill-chip">Shopify</span>
+      <div class="skill-icons">
+        <div class="skill-tile"><img src="https://cdn.simpleicons.org/salesforce" alt="Salesforce" onerror="this.outerHTML='<div class=\'fallback\'>SF</div>';" /><span class="label">Salesforce</span></div>
+        <div class="skill-tile"><img src="https://cdn.simpleicons.org/hubspot" alt="HubSpot" onerror="this.outerHTML='<div class=\'fallback\'>HS</div>';" /><span class="label">HubSpot</span></div>
+        <div class="skill-tile"><img src="https://cdn.simpleicons.org/shopify" alt="Shopify" onerror="this.outerHTML='<div class=\'fallback\'>SH</div>';" /><span class="label">Shopify</span></div>
       </div>
     </div>
 
     <div class="skill-group reveal">
       <h4>AI Fluency</h4>
-      <div class="skill-chips">
-        <span class="skill-chip">Anthropic AI Fluency</span>
-        <span class="skill-chip">HubSpot AI for Marketers</span>
-        <span class="skill-chip">Meta Blueprint</span>
-        <span class="skill-chip">Google Skillshop</span>
+      <div class="skill-icons">
+        <div class="skill-tile"><img src="https://cdn.simpleicons.org/anthropic" alt="Anthropic AI Fluency" onerror="this.outerHTML='<div class=\'fallback\'>A</div>';" /><span class="label">Anthropic AI Fluency</span></div>
+        <div class="skill-tile"><img src="https://cdn.simpleicons.org/hubspot" alt="HubSpot AI for Marketers" onerror="this.outerHTML='<div class=\'fallback\'>HS</div>';" /><span class="label">HubSpot AI</span></div>
+        <div class="skill-tile"><img src="https://cdn.simpleicons.org/meta" alt="Meta Blueprint" onerror="this.outerHTML='<div class=\'fallback\'>M</div>';" /><span class="label">Meta Blueprint</span></div>
+        <div class="skill-tile"><img src="https://cdn.simpleicons.org/google" alt="Google Skillshop" onerror="this.outerHTML='<div class=\'fallback\'>G</div>';" /><span class="label">Google Skillshop</span></div>
       </div>
     </div>
 
