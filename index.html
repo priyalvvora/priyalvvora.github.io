@@ -215,6 +215,8 @@
       color: var(--accent); position: relative; overflow: hidden;
       border-bottom: 1px solid var(--border);
     }
+    .work-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+    .work-card:hover .work-thumb img { transform: scale(1.03); }
     .work-thumb.tableau { background: linear-gradient(135deg, #e8d9bf 0%, #d4bd97 100%); color: #5a4524; }
     .work-thumb.rshiny { background: linear-gradient(135deg, #d8c3a4 0%, #b59874 100%); color: #3a2a14; }
     .work-thumb.coming { background: repeating-linear-gradient(45deg, var(--bg-soft), var(--bg-soft) 12px, var(--bg-card) 12px, var(--bg-card) 24px); color: var(--ink-muted); font-size: 0.95rem; }
@@ -395,10 +397,12 @@
         <div class="exp-role">AVP, Data Analytics — Marketing</div>
         <div class="exp-meta"><span>New York, USA</span><span>Jul 2022 – Present</span></div>
         <ul>
+          <li>Led 15+ customer remediation projects to resolve 10K+ accounts and $1.5M+ in corrected balances; co-developed automation workflows that cut project turnaround from 6 months to 90 days</li>
           <li>Designed lifecycle engagement campaigns and gamified offers using behavioral analytics — generating $5M+ in incremental balances and activating 6.3K households</li>
           <li>Drove $350K+ in annual deposit growth and reactivated 2K+ dormant customers through attrition analysis and funnel diagnostics using SQL and PySpark</li>
           <li>Modeled underbanked customer segments via white-space analysis for a Financial Inclusion initiative, supporting acquisition strategies projected to drive 27% YoY account growth</li>
           <li>Developed Tableau KPI dashboards and executive reporting frameworks that improved campaign visibility and decision-making efficiency</li>
+          <li>Trained 2 analysts on customer segmentation and SQL workflows, accelerating onboarding and ensuring analytical consistency across the team</li>
         </ul>
       </div>
     </div>
@@ -461,7 +465,9 @@
   <div class="portfolio-grid">
 
     <div class="work-card reveal">
-      <div class="work-thumb tableau">Global Airbnb Traveller Guide</div>
+      <div class="work-thumb tableau">
+        <img src="https://public.tableau.com/static/images/Gl/GlobalAirbnbTravellerGuide/1_Overview/1_rss.png" alt="Global Airbnb Traveller Guide dashboard preview" />
+      </div>
       <div class="work-body">
         <div class="work-tag">Tableau Dashboard</div>
         <h3>Global Airbnb Traveller Guide</h3>
@@ -473,7 +479,9 @@
     </div>
 
     <div class="work-card reveal">
-      <div class="work-thumb tableau">NYC Green Taxi Demand</div>
+      <div class="work-thumb tableau">
+        <img src="https://public.tableau.com/static/images/NY/NYCGreenTaxiTripsDemandBoroughAnalysis/DemandLocationAnalysis/1_rss.png" alt="NYC Green Taxi Demand dashboard preview" />
+      </div>
       <div class="work-body">
         <div class="work-tag">Tableau Dashboard</div>
         <h3>NYC Green Taxi Trips — Demand & Borough Analysis</h3>
