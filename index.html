@@ -50,7 +50,6 @@
     a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
     a:hover { color: var(--ink); }
 
-    /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0;
       background: rgba(245, 239, 228, 0.85);
@@ -85,7 +84,6 @@
     .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
     .nav-toggle span { display: block; width: 22px; height: 2px; background: var(--ink); margin: 4px 0; transition: 0.3s; }
 
-    /* SECTIONS */
     section { padding: 110px 32px 90px; max-width: 1180px; margin: 0 auto; }
     .section-tag {
       display: inline-block;
@@ -94,7 +92,6 @@
       color: var(--accent); margin-bottom: 14px;
     }
 
-    /* HERO */
     #about { padding-top: 140px; min-height: 100vh; display: flex; align-items: center; }
     .hero { display: grid; grid-template-columns: 1.4fr 1fr; gap: 80px; align-items: center; width: 100%; }
     .hero-greeting {
@@ -126,7 +123,6 @@
       color: var(--ink-muted); font-size: 0.9rem;
     }
 
-    /* RESUME */
     .resume-card {
       background: var(--bg-card);
       border-radius: var(--radius);
@@ -151,7 +147,6 @@
     .btn svg { width: 16px; height: 16px; }
     .resume-actions { display: flex; gap: 12px; flex-wrap: wrap; }
 
-    /* WORK EXPERIENCE */
     .experience-grid { display: flex; flex-direction: column; gap: 24px; margin-top: 50px; }
     .exp-card {
       background: var(--bg-card); border-radius: var(--radius); padding: 36px;
@@ -194,7 +189,6 @@
       width: 6px; height: 6px; border-radius: 50%; background: var(--accent-soft);
     }
 
-    /* PORTFOLIO */
     .portfolio-grid {
       display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
       gap: 24px; margin-top: 50px;
@@ -251,29 +245,49 @@
       gap: 10px;
     }
     .skill-tile {
-      display: flex; flex-direction: column; align-items: center; gap: 8px;
-      padding: 14px 6px;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 12px 7px;
       border-radius: 10px;
       background: #ffffff;
       border: 1px solid var(--border);
       transition: all 0.2s;
       text-align: center;
+      min-height: 74px;
     }
     .skill-tile:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
-    .skill-tile img {
-      width: 30px; height: 30px; object-fit: contain; display: block;
+    .skill-tile .icon-wrap {
+      width: 100%;
+      display: flex; align-items: center; justify-content: center;
+      height: 42px;
     }
+    .skill-tile img {
+      max-width: 96%; max-height: 38px;
+      width: auto; height: auto;
+      object-fit: contain;
+      display: block;
+    }
+    /* Per-logo nudge for source images with internal padding */
+    .skill-tile img.zoom { transform: scale(1.2); }
+    .skill-tile img.zoom-lg { transform: scale(1.4); }
+    .skill-tile img.zoom-xl { transform: scale(1.8); }
+    /* Methods chips span full width as a horizontal bottom row */
+    .skill-group.methods-row { grid-column: 1 / -1; }
     .skill-tile .fallback {
-      width: 30px; height: 30px; border-radius: 6px;
+      width: 36px; height: 36px; border-radius: 6px;
       background: var(--accent-soft); color: #fff;
       display: flex; align-items: center; justify-content: center;
-      font-weight: 700; font-size: 0.8rem; letter-spacing: 0.02em;
+      font-weight: 700; font-size: 0.8rem;
+    }
+    /* Only labelled groups (Certifications) show text below logos and are slightly taller */
+    .skill-group.with-labels .skill-tile {
+      min-height: 100px;
+      gap: 8px;
+      padding: 13px 7px;
     }
     .skill-tile span.label {
-      font-size: 0.72rem; color: var(--ink);
-      font-weight: 500; line-height: 1.2;
+      font-size: 0.7rem; color: var(--ink);
+      font-weight: 500; line-height: 1.25;
     }
-    /* Methods chips stay as pills since these are concepts not products */
     .skill-chips { display: flex; flex-wrap: wrap; gap: 8px; }
     .skill-chip {
       background: var(--bg-soft); padding: 6px 13px;
@@ -281,7 +295,6 @@
       color: var(--ink); font-weight: 500;
     }
 
-    /* CONTACT */
     #contact { text-align: center; padding-bottom: 120px; }
     #contact h2 { margin-bottom: 16px; }
     #contact > p { max-width: 560px; margin: 0 auto 50px; font-size: 1.05rem; }
@@ -312,17 +325,14 @@
     }
     .contact-card a:hover { color: var(--accent); }
 
-    /* FOOTER */
     footer {
       padding: 30px 32px; border-top: 1px solid var(--border);
       text-align: center; font-size: 0.85rem; color: var(--ink-muted);
     }
 
-    /* REVEAL */
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity: 1; transform: none; }
 
-    /* RESPONSIVE */
     @media (max-width: 880px) {
       section { padding: 90px 24px 70px; }
       .hero { grid-template-columns: 1fr; gap: 50px; text-align: center; }
@@ -358,12 +368,11 @@
   </div>
 </nav>
 
-<!-- 1. ABOUT -->
 <section id="about">
   <div class="hero">
     <div class="reveal">
       <div class="hero-greeting">Hello, I'm</div>
-      <h1>Priyal Vora —<br/><span class="accent">Growth & Marketing Analytics</span></h1>
+      <h1>Priyal Vora<br/><span class="accent">Growth & Marketing Analytics</span></h1>
       <p>I'm a data-driven marketing analytics professional with 7+ years of experience helping businesses understand their customers and grow smarter — across banking, edtech, e-commerce, and digital media.</p>
       <p>Currently AVP, Data Analytics at Citibank, where I design lifecycle engagement strategies, model customer segments, and build executive reporting that turns behavior into action. Earlier, at Eruditus Executive Education, I owned customer acquisition for UC Berkeley, Kellogg, and MIT Sloan programs — building attribution and forecasting models that reduced CAC by 30%. I began my career at Publicis Media managing B2B paid media campaigns that drove 10x revenue growth.</p>
       <p>I hold an MS in Marketing (STEM Designated) from Purdue University's Krannert School of Management, and I'm fluent across SQL, Python, Tableau, Power BI, and the modern MarTech stack — with active AI fluency credentials from Anthropic, HubSpot, Meta, and Google.</p>
@@ -381,10 +390,8 @@
   </div>
 </section>
 
-<!-- 2. RESUME -->
 <section id="resume">
   <div class="reveal">
-    <span class="section-tag">02 — Resume</span>
     <h2>My resume</h2>
     <p style="margin-bottom: 36px; max-width: 620px;">A snapshot of my work, education, and the tools I use to turn data into growth.</p>
     <div class="resume-card">
@@ -406,10 +413,8 @@
   </div>
 </section>
 
-<!-- 3. WORK EXPERIENCE -->
 <section id="experience">
   <div class="reveal">
-    <span class="section-tag">03 — Experience</span>
     <h2>Where I've worked</h2>
     <p style="max-width: 620px;">Seven years across banking, edtech, and digital media — turning customer data into growth strategy.</p>
   </div>
@@ -482,10 +487,8 @@
   </div>
 </section>
 
-<!-- 4. PORTFOLIO -->
 <section id="portfolio">
   <div class="reveal">
-    <span class="section-tag">04 — Portfolio</span>
     <h2>Selected work</h2>
     <p style="max-width: 620px;">A growing collection of dashboards, models, and analyses. More projects being added soon.</p>
   </div>
@@ -568,10 +571,8 @@
   </div>
 </section>
 
-<!-- 5. SKILLS -->
 <section id="skills">
   <div class="reveal">
-    <span class="section-tag">05 — Skills</span>
     <h2>Technical toolkit</h2>
     <p style="max-width: 620px;">The languages, platforms, and tools I work with day to day.</p>
   </div>
@@ -580,71 +581,84 @@
     <div class="skill-group reveal">
       <h4>Data & Analytics</h4>
       <div class="skill-icons">
-        <div class="skill-tile"><img src="https://cdn.simpleicons.org/postgresql" alt="SQL" onerror="this.outerHTML='<div class=\'fallback\'>SQL</div>';" /><span class="label">SQL</span></div>
-        <div class="skill-tile"><img src="https://cdn.simpleicons.org/python" alt="Python" onerror="this.outerHTML='<div class=\'fallback\'>PY</div>';" /><span class="label">Python</span></div>
-        <div class="skill-tile"><img src="https://cdn.simpleicons.org/apachespark" alt="PySpark" onerror="this.outerHTML='<div class=\'fallback\'>PS</div>';" /><span class="label">PySpark</span></div>
-        <div class="skill-tile"><img src="https://cdn.simpleicons.org/sas" alt="SAS Studio" onerror="this.outerHTML='<div class=\'fallback\'>SAS</div>';" /><span class="label">SAS Studio</span></div>
-        <div class="skill-tile"><img src="https://cdn.simpleicons.org/microsoftexcel" alt="Excel" onerror="this.outerHTML='<div class=\'fallback\'>XL</div>';" /><span class="label">Excel</span></div>
+        <div class="skill-tile"><div class="icon-wrap"><img class="zoom-lg" src="https://images.g2crowd.com/uploads/product/image/251be2af3ae607c45c14e816eaa1cf41/postgresql.png" alt="SQL" onerror="this.outerHTML='<div class=\'fallback\'>SQL</div>';" /></div></div>
+        <div class="skill-tile"><div class="icon-wrap"><img class="zoom-lg" src="https://s3.amazonaws.com/files.commons.gc.cuny.edu/wp-content/blogs.dir/885/files/2022/09/Python-Symbol.png" alt="Python" onerror="this.outerHTML='<div class=\'fallback\'>PY</div>';" /></div></div>
+        <div class="skill-tile"><div class="icon-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Apache_Spark_logo.svg/960px-Apache_Spark_logo.svg.png" alt="PySpark" onerror="this.outerHTML='<div class=\'fallback\'>PS</div>';" /></div></div>
+        <div class="skill-tile"><div class="icon-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/1/10/SAS_logo_horiz.svg" alt="SAS Studio" onerror="this.outerHTML='<div class=\'fallback\'>SAS</div>';" /></div></div>
+        <div class="skill-tile"><div class="icon-wrap"><img class="zoom-lg" src="https://www.logo.wine/a/logo/Microsoft_Excel/Microsoft_Excel-Logo.wine.svg" alt="Excel" onerror="this.outerHTML='<div class=\'fallback\'>XL</div>';" /></div></div>
       </div>
     </div>
 
     <div class="skill-group reveal">
       <h4>Visualization & BI</h4>
       <div class="skill-icons">
-        <div class="skill-tile"><img src="https://cdn.simpleicons.org/tableau" alt="Tableau" onerror="this.outerHTML='<div class=\'fallback\'>TB</div>';" /><span class="label">Tableau</span></div>
-        <div class="skill-tile"><img src="https://cdn.simpleicons.org/powerbi" alt="Power BI" onerror="this.outerHTML='<div class=\'fallback\'>PBI</div>';" /><span class="label">Power BI</span></div>
-        <div class="skill-tile"><img src="https://cdn.simpleicons.org/microsoftoffice" alt="MS Office" onerror="this.outerHTML='<div class=\'fallback\'>MS</div>';" /><span class="label">MS Office</span></div>
+        <div class="skill-tile"><div class="icon-wrap"><img class="zoom" src="https://www.salesforce.com/news/wp-content/uploads/sites/3/2023/09/Tableau-From-Salesforce-Logo-COLOR-1.png" alt="Tableau" onerror="this.outerHTML='<div class=\'fallback\'>TB</div>';" /></div></div>
+        <div class="skill-tile"><div class="icon-wrap"><img class="zoom-xl" src="https://images.seeklogo.com/logo-png/40/2/power-bi-microsoft-logo-png_seeklogo-400711.png" alt="Power BI" onerror="this.outerHTML='<div class=\'fallback\'>PBI</div>';" /></div></div>
+        <div class="skill-tile"><div class="icon-wrap"><img src="https://logo.com/image-cdn/images/kts928pd/production/c79cd4d763fb137927bcd4b4eb43c80a7e20824a-1600x695.png?w=1920&q=72&fm=webp" alt="MS Office" onerror="this.outerHTML='<div class=\'fallback\'>MS</div>';" /></div></div>
       </div>
     </div>
 
     <div class="skill-group reveal">
       <h4>Marketing Analytics</h4>
       <div class="skill-icons">
-        <div class="skill-tile"><img src="https://cdn.simpleicons.org/googleanalytics" alt="Google Analytics" onerror="this.outerHTML='<div class=\'fallback\'>GA</div>';" /><span class="label">Google Analytics</span></div>
-        <div class="skill-tile"><img src="https://cdn.simpleicons.org/adobe" alt="Adobe Analytics" onerror="this.outerHTML='<div class=\'fallback\'>AA</div>';" /><span class="label">Adobe Analytics</span></div>
-        <div class="skill-tile"><img src="https://cdn.simpleicons.org/googleads" alt="Google Ads" onerror="this.outerHTML='<div class=\'fallback\'>GAd</div>';" /><span class="label">Google Ads</span></div>
-        <div class="skill-tile"><img src="https://cdn.simpleicons.org/meta" alt="Meta Ads" onerror="this.outerHTML='<div class=\'fallback\'>M</div>';" /><span class="label">Meta Ads</span></div>
-        <div class="skill-tile"><img src="https://cdn.simpleicons.org/linkedin" alt="LinkedIn Ads" onerror="this.outerHTML='<div class=\'fallback\'>in</div>';" /><span class="label">LinkedIn Ads</span></div>
+        <div class="skill-tile"><div class="icon-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Logo_Google_Analytics.svg/1280px-Logo_Google_Analytics.svg.png" alt="Google Analytics" onerror="this.outerHTML='<div class=\'fallback\'>GA</div>';" /></div></div>
+        <div class="skill-tile"><div class="icon-wrap"><img class="zoom-lg" src="https://www.freelogovectors.net/wp-content/uploads/2023/05/adobe_analytics-logo-freelogovectors.net_.png" alt="Adobe Analytics" onerror="this.outerHTML='<div class=\'fallback\'>AA</div>';" /></div></div>
+        <div class="skill-tile"><div class="icon-wrap"><img class="zoom-lg" style="transform: scale(1.5);" src="https://iconlogovector.com/uploads/images/2024/09/lg-66d67065d6779-Google-Ads-Logo.webp" alt="Google Ads" onerror="this.outerHTML='<div class=\'fallback\'>GAd</div>';" /></div></div>
+        <div class="skill-tile"><div class="icon-wrap"><img class="zoom-lg" src="https://cdn.simpleicons.org/meta" alt="Meta Ads" onerror="this.outerHTML='<div class=\'fallback\'>M</div>';" /></div></div>
+        <div class="skill-tile"><div class="icon-wrap"><img class="zoom" src="https://www.loomdigital.co.uk/wp-content/uploads/2024/07/linkedin-ads-300x150.webp" alt="LinkedIn Ads" onerror="this.outerHTML='<div class=\'fallback\'>in</div>';" /></div></div>
       </div>
     </div>
 
     <div class="skill-group reveal">
       <h4>MarTech & CRM</h4>
       <div class="skill-icons">
-        <div class="skill-tile"><img src="https://cdn.simpleicons.org/salesforce" alt="Salesforce" onerror="this.outerHTML='<div class=\'fallback\'>SF</div>';" /><span class="label">Salesforce</span></div>
-        <div class="skill-tile"><img src="https://cdn.simpleicons.org/hubspot" alt="HubSpot" onerror="this.outerHTML='<div class=\'fallback\'>HS</div>';" /><span class="label">HubSpot</span></div>
-        <div class="skill-tile"><img src="https://cdn.simpleicons.org/shopify" alt="Shopify" onerror="this.outerHTML='<div class=\'fallback\'>SH</div>';" /><span class="label">Shopify</span></div>
+        <div class="skill-tile"><div class="icon-wrap"><img class="zoom-lg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/1280px-Salesforce.com_logo.svg.png" alt="Salesforce" onerror="this.outerHTML='<div class=\'fallback\'>SF</div>';" /></div></div>
+        <div class="skill-tile"><div class="icon-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/HubSpot_Logo.svg/3840px-HubSpot_Logo.svg.png" alt="HubSpot" onerror="this.outerHTML='<div class=\'fallback\'>HS</div>';" /></div></div>
+        <div class="skill-tile"><div class="icon-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Shopify_logo_2018.svg/960px-Shopify_logo_2018.svg.png" alt="Shopify" onerror="this.outerHTML='<div class=\'fallback\'>SH</div>';" /></div></div>
       </div>
     </div>
 
     <div class="skill-group reveal">
-      <h4>AI Fluency</h4>
+      <h4>AI Tools</h4>
       <div class="skill-icons">
-        <div class="skill-tile"><img src="https://cdn.simpleicons.org/anthropic" alt="Anthropic AI Fluency" onerror="this.outerHTML='<div class=\'fallback\'>A</div>';" /><span class="label">Anthropic AI Fluency</span></div>
-        <div class="skill-tile"><img src="https://cdn.simpleicons.org/hubspot" alt="HubSpot AI for Marketers" onerror="this.outerHTML='<div class=\'fallback\'>HS</div>';" /><span class="label">HubSpot AI</span></div>
-        <div class="skill-tile"><img src="https://cdn.simpleicons.org/meta" alt="Meta Blueprint" onerror="this.outerHTML='<div class=\'fallback\'>M</div>';" /><span class="label">Meta Blueprint</span></div>
-        <div class="skill-tile"><img src="https://cdn.simpleicons.org/google" alt="Google Skillshop" onerror="this.outerHTML='<div class=\'fallback\'>G</div>';" /><span class="label">Google Skillshop</span></div>
+        <div class="skill-tile"><div class="icon-wrap"><img src="https://i.logos-download.com/114232/31116-05a1502c46130721c61b3a89eb569886.png/Claude_Logo_2023.png?dl" alt="Claude" onerror="this.outerHTML='<div class=\'fallback\'>C</div>';" /></div></div>
+        <div class="skill-tile"><div class="icon-wrap"><img src="https://i.logos-download.com/102730/25527-7914d22aa7a39ffbc8957fc8cd3d6856.png/Google_Gemini_Logo_2025.png?dl" alt="Gemini" onerror="this.outerHTML='<div class=\'fallback\'>G</div>';" /></div></div>
+        <div class="skill-tile"><div class="icon-wrap"><img class="zoom-lg" src="https://cdn.freebiesupply.com/logos/large/2x/chatgpt-logo-png-transparent.png" alt="ChatGPT" onerror="this.outerHTML='<div class=\'fallback\'>GPT</div>';" /></div></div>
       </div>
     </div>
 
-    <div class="skill-group reveal">
+    <div class="skill-group with-labels reveal">
+      <h4>Certifications & Coursework</h4>
+      <div class="skill-icons">
+        <div class="skill-tile"><div class="icon-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Anthropic_logo.svg/1280px-Anthropic_logo.svg.png" alt="Anthropic AI Fluency" onerror="this.outerHTML='<div class=\'fallback\'>A</div>';" /></div><span class="label">Anthropic AI Fluency</span></div>
+        <div class="skill-tile"><div class="icon-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/HubSpot_Logo.svg/3840px-HubSpot_Logo.svg.png" alt="HubSpot AI for Marketers" onerror="this.outerHTML='<div class=\'fallback\'>HS</div>';" /></div><span class="label">HubSpot AI for Marketers</span></div>
+        <div class="skill-tile"><div class="icon-wrap"><img src="https://cdn.simpleicons.org/meta" alt="Meta Blueprint" onerror="this.outerHTML='<div class=\'fallback\'>M</div>';" /></div><span class="label">Meta Blueprint</span></div>
+        <div class="skill-tile"><div class="icon-wrap"><img src="https://logos-world.net/wp-content/uploads/2022/05/Google-AdWords-Logo.png" alt="Google Skillshop" onerror="this.outerHTML='<div class=\'fallback\'>G</div>';" /></div><span class="label">Google Skillshop</span></div>
+      </div>
+    </div>
+
+    <div class="skill-group methods-row reveal">
       <h4>Methods</h4>
       <div class="skill-chips">
-        <span class="skill-chip">A/B Testing</span>
-        <span class="skill-chip">Attribution Modeling</span>
-        <span class="skill-chip">Cohort Analysis</span>
         <span class="skill-chip">Customer Segmentation</span>
+        <span class="skill-chip">Cohort Analysis</span>
+        <span class="skill-chip">A/B Testing</span>
+        <span class="skill-chip">Multi-Touch Attribution</span>
+        <span class="skill-chip">Marketing Mix Modeling</span>
+        <span class="skill-chip">Funnel Optimization</span>
+        <span class="skill-chip">Lifecycle Marketing</span>
+        <span class="skill-chip">Demand Generation</span>
         <span class="skill-chip">Forecasting</span>
+        <span class="skill-chip">Go-to-Market Strategy</span>
+        <span class="skill-chip">Stakeholder Management</span>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- 6. CONTACT -->
 <section id="contact">
   <div class="reveal">
-    <span class="section-tag">06 — Contact</span>
     <h2>Let's connect</h2>
     <p>Open to growth analytics and marketing strategy conversations. I'd love to hear from you.</p>
     <div class="contact-grid">
