@@ -122,6 +122,10 @@
     .work-thumb.capstone { background: linear-gradient(135deg, #d4bd97 0%, #a08560 100%); color: #2a2520; padding: 24px; text-align: center; }
     .work-thumb.capstone .ttl { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.7rem; line-height: 1.1; margin-bottom: 6px; }
     .work-thumb.capstone .sub { font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: #6e5535; font-weight: 600; }
+    .work-thumb.croatan { background: #8d1d23; padding: 18px; display: flex; align-items: center; justify-content: center; }
+    .work-thumb.croatan img { width: 100%; max-width: 320px; height: auto; max-height: 95%; object-fit: contain; transition: transform 0.4s ease; }
+    .work-card:hover .work-thumb.croatan img { transform: scale(1.03); }
+    .work-thumb.croatan .ttl-fallback { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.7rem; line-height: 1.1; color: #fbf7f0; text-align: center; }
     .work-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
     .work-tag { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 8px; }
     .work-body h3 { font-family: 'Inter', sans-serif; font-size: 1.05rem; font-weight: 600; margin-bottom: 8px; }
@@ -334,7 +338,7 @@
         </div>
       </a>
       <div class="work-body">
-        <div class="work-tag">Capstone Project</div>
+        <div class="work-tag">Capstone Project · Marketing Analytics</div>
         <h3>Ruby and Roses — Marketing Analytics Consulting</h3>
         <p>Six-month consulting engagement for a hand-dyed yarn brand: RFM segmentation on 1,652 customers, market basket analysis across 21,843 association rules, and a linear regression model predicting order fulfillment.</p>
         <div class="work-links">
@@ -345,15 +349,18 @@
     </div>
 
     <div class="work-card reveal">
-      <div class="work-thumb tableau">
-        <img src="https://public.tableau.com/static/images/Gl/GlobalAirbnbTravellerGuide/1_Overview/1_rss.png" alt="Global Airbnb Traveller Guide dashboard preview" />
+      <div class="work-thumb croatan">
+        <img src="https://croataninstitute.org/wp-content/uploads/2020/12/Croatan_horizontal_white_text.png" alt="Croatan Institute logo" onerror="this.style.display='none'; this.insertAdjacentHTML('afterend', '<div class=\'ttl-fallback\'>Croatan Institute</div>');" />
       </div>
       <div class="work-body">
-        <div class="work-tag">Tableau Dashboard</div>
-        <h3>Global Airbnb Traveller Guide</h3>
-        <p>An interactive dashboard exploring Airbnb listings across global destinations — helping travellers compare prices, ratings, and stay options by city.</p>
+        <div class="work-tag">Capstone Project · Search Engine Marketing</div>
+        <h3>Croatan Institute — Google Ads Grant Campaign for a Sustainable-Finance Nonprofit</h3>
+        <p>Built and launched a Google Ads Grants search campaign for Croatan Institute. Six-week capstone covering competitive ESG keyword research, multi-tier campaign structure, responsive search ad copy, bid strategy pivots, and post-flight learnings.</p>
         <div class="work-links">
-          <a href="https://public.tableau.com/app/profile/priyal.vipul.vora/viz/GlobalAirbnbTravellerGuide/1_Overview" target="_blank" rel="noopener">View dashboard</a>
+          <a href="assets/googleads/PreCampaign_Croatan.pptx" target="_blank" rel="noopener">Pre-campaign plan</a>
+          <a href="assets/googleads/PostCampaign_Croatan.pptx" target="_blank" rel="noopener">Post-campaign report</a>
+          <a href="assets/googleads/Google_NMI_Keyword_Research_and_Media_Plan.xlsx" download>Keyword research</a>
+          <a href="assets/googleads/Approved_Ads_and_Extensions.xlsx" download>Ad copy</a>
         </div>
       </div>
     </div>
@@ -368,6 +375,20 @@
         <p>A demand & location analysis of NYC Green Taxi trip data, visualizing borough-level patterns, peak hours, and revenue drivers.</p>
         <div class="work-links">
           <a href="https://public.tableau.com/app/profile/priyal.vipul.vora/viz/NYCGreenTaxiTripsDemandBoroughAnalysis/DemandLocationAnalysis" target="_blank" rel="noopener">View dashboard</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="work-card reveal">
+      <div class="work-thumb tableau">
+        <img src="https://public.tableau.com/static/images/Gl/GlobalAirbnbTravellerGuide/1_Overview/1_rss.png" alt="Global Airbnb Traveller Guide dashboard preview" />
+      </div>
+      <div class="work-body">
+        <div class="work-tag">Tableau Dashboard</div>
+        <h3>Global Airbnb Traveller Guide</h3>
+        <p>An interactive dashboard exploring Airbnb listings across global destinations — helping travellers compare prices, ratings, and stay options by city.</p>
+        <div class="work-links">
+          <a href="https://public.tableau.com/app/profile/priyal.vipul.vora/viz/GlobalAirbnbTravellerGuide/1_Overview" target="_blank" rel="noopener">View dashboard</a>
         </div>
       </div>
     </div>
