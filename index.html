@@ -110,7 +110,9 @@
     .exp-content li { color: var(--ink-soft); font-size: 0.94rem; padding-left: 22px; position: relative; margin-bottom: 8px; line-height: 1.6; }
     .exp-content li::before { content: ''; position: absolute; left: 4px; top: 11px; width: 6px; height: 6px; border-radius: 50%; background: var(--accent-soft); }
 
-    .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; margin-top: 50px; }
+    .portfolio-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 50px; }
+    @media (max-width: 820px) { .portfolio-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 500px) { .portfolio-grid { grid-template-columns: 1fr; } }
     .work-card { background: var(--bg-card); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: all 0.3s; display: flex; flex-direction: column; border: 1px solid transparent; }
     .work-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: var(--border); }
     .work-thumb { aspect-ratio: 16/10; background: var(--bg-soft); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--accent); position: relative; overflow: hidden; border-bottom: 1px solid var(--border); }
@@ -126,6 +128,12 @@
     .work-thumb.croatan img { width: 100%; max-width: 320px; height: auto; max-height: 95%; object-fit: contain; transition: transform 0.4s ease; }
     .work-card:hover .work-thumb.croatan img { transform: scale(1.03); }
     .work-thumb.croatan .ttl-fallback { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.7rem; line-height: 1.1; color: #fbf7f0; text-align: center; }
+    .work-thumb.gallery { background: var(--bg-soft); padding: 0; }
+    .work-thumb.gallery img { width: 100%; height: 100%; object-fit: cover; }
+    .work-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+    .work-body h3 { font-family: 'Inter', sans-serif; font-size: 0.98rem; font-weight: 600; margin-bottom: 8px; line-height: 1.35; }
+    .work-body p { font-size: 0.85rem; flex: 1; margin-bottom: 14px; line-height: 1.5; }
+    .work-tag { font-size: 0.68rem; letter-spacing: 0.14em; }
     .work-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
     .work-tag { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 8px; }
     .work-body h3 { font-family: 'Inter', sans-serif; font-size: 1.05rem; font-weight: 600; margin-bottom: 8px; }
@@ -411,24 +419,21 @@
     </div>
 
     <div class="work-card reveal">
-      <div class="work-thumb coming">Coming soon</div>
+      <a href="projects.html" style="text-decoration: none; color: inherit; display: contents;">
+        <div class="work-thumb gallery">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="Selected projects — analytics dashboards" />
+        </div>
+      </a>
       <div class="work-body">
-        <div class="work-tag">Power BI Dashboard</div>
-        <h3>Power BI Portfolio</h3>
-        <p>Marketing mix and demand-generation dashboards combining demographic, behavioral, and spend signals to optimize multi-channel allocation.</p>
-        <div class="work-links"><a href="#contact">Request details</a></div>
+        <div class="work-tag">Selected Works · Gallery</div>
+        <h3>Additional Projects — Tableau, Paid Social &amp; Case Studies</h3>
+        <p>A curated gallery of additional analytics, paid social, and brand-strategy work — Mad Mushroom DSMME case, GoodLives mental-health campaign, fintech topic modeling, Costco database marketing, and Forbes 500 explorer.</p>
+        <div class="work-links">
+          <a href="projects.html"><strong>Open gallery</strong></a>
+        </div>
       </div>
     </div>
 
-    <div class="work-card reveal">
-      <div class="work-thumb coming">Coming soon</div>
-      <div class="work-body">
-        <div class="work-tag">Presentations & Writeups</div>
-        <h3>Selected Decks & Analyses</h3>
-        <p>A collection of strategic presentations and analytical writeups developed across roles — case studies, campaign retros, and stakeholder narratives.</p>
-        <div class="work-links"><a href="#contact">Request details</a></div>
-      </div>
-    </div>
   </div>
 </section>
 
