@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Additional Projects | Priyal Vora</title>
-  <meta name="description" content="Selected additional projects from Priyal Vora — Tableau dashboards, marketing analytics, NLP/topic modeling, paid social campaigns, and case competitions." />
+  <meta name="description" content="Selected additional projects from Priyal Vora: marketplace analytics, Tableau dashboards, marketing analytics, NLP and topic modeling, paid social campaigns, and case competitions." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -111,6 +111,14 @@
       color: #fff; opacity: 0.6; font-size: 0.65rem; letter-spacing: 0.18em;
       text-transform: uppercase; font-weight: 600; margin-top: 4px;
     }
+    .pthumb.doordash { background: var(--bg-soft); padding: 0; display: block; }
+    .pthumb.doordash .dd-badge { position: absolute; top: 14px; left: 14px; width: 38px; height: 38px; border-radius: 10px; background: #eb1700; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 14px rgba(235,23,0,0.34); z-index: 2; }
+    .pthumb.doordash .dd-badge svg { width: 23px; height: 23px; color: #fff; }
+    .pthumb.doordash .dd-chart { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -58%); width: 72%; }
+    .pthumb.doordash .dd-chart svg { width: 100%; height: auto; display: block; }
+    .pthumb.doordash .dd-caption { position: absolute; left: 18px; right: 18px; bottom: 14px; z-index: 2; }
+    .pthumb.doordash .dd-brand { font-weight: 700; font-size: 1.02rem; color: var(--ink); letter-spacing: -0.01em; line-height: 1.1; }
+    .pthumb.doordash .dd-sub { font-size: 0.64rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-top: 3px; }
     .pbody { padding: 22px; flex: 1; display: flex; flex-direction: column; }
     .ptag {
       font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
@@ -152,12 +160,45 @@
   <div class="reveal">
     <span class="section-tag">Additional Projects</span>
     <h1>Selected work <span class="accent">across analytics, paid social, and brand strategy</span></h1>
-    <p>A curated collection of additional projects — Tableau dashboards, NLP/topic modeling, paid social campaign execution, and digital marketing case competitions. Each piece reflects a different lens on the customer–marketing intersection.</p>
+    <p>A curated collection of additional projects: marketplace analytics, Tableau dashboards, NLP and topic modeling, paid social campaign execution, and digital marketing case competitions. Each piece reflects a different lens on the customer and marketing intersection.</p>
   </div>
 </section>
 
 <section>
   <div class="projects-grid">
+
+    <!-- 6. DoorDash Marketplace Review (Take-Home Assessment) -->
+    <div class="pcard reveal">
+      <div class="pthumb doordash">
+        <div class="dd-badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M23.071 8.409a6.09 6.09 0 00-5.396-3.228H.584A.589.589 0 00.17 6.184L3.894 9.93a1.752 1.752 0 001.242.516h12.049a1.554 1.554 0 11.031 3.108H8.91a.589.589 0 00-.415 1.003l3.725 3.747a1.75 1.75 0 001.242.516h3.757c4.887 0 8.584-5.225 5.852-10.413"/></svg>
+        </div>
+        <div class="dd-chart" aria-hidden="true">
+          <svg viewBox="0 0 200 96" xmlns="http://www.w3.org/2000/svg">
+            <line x1="8" y1="86" x2="192" y2="86" stroke="#d8cbb2" stroke-width="1"/>
+            <rect x="16" y="60" width="24" height="26" rx="3" fill="#f5b79f"/>
+            <rect x="52" y="50" width="24" height="36" rx="3" fill="#f0997b"/>
+            <rect x="88" y="42" width="24" height="44" rx="3" fill="#ec6b40"/>
+            <rect x="124" y="30" width="24" height="56" rx="3" fill="#eb1700"/>
+            <rect x="160" y="18" width="24" height="68" rx="3" fill="#c00f00"/>
+            <path d="M28 56 L64 46 L100 38 L136 26 L172 15" fill="none" stroke="#6e5535" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="172" cy="15" r="4" fill="#6e5535"/>
+          </svg>
+        </div>
+        <div class="dd-caption">
+          <div class="dd-brand">DoorDash</div>
+          <div class="dd-sub">Marketplace Review</div>
+        </div>
+      </div>
+      <div class="pbody">
+        <div class="ptag">Marketplace Analytics · Growth Strategy</div>
+        <h3>DoorDash — Marketplace Review &amp; Growth Diagnosis</h3>
+        <p>Analyzed a month of DoorDash orders across customers, merchants, and Dashers to find what limits order frequency and retention. Cleaned the data in Excel and built pivots, weekly-trend, and retention views, then delivered a six-slide executive readout: 3 in 4 customers order once and absorb 69% of discounts, 7 of 62 restaurants carry 53% of volume, and 77% of Dashers last a single week. Each finding pairs with a prioritized move.</p>
+        <div class="plinks">
+          <a href="assets/projects/DoorDash_Marketplace_Review.pdf" target="_blank" rel="noopener">Read deck</a>
+        </div>
+      </div>
+    </div>
 
     <!-- 5. Mad Mushroom DSMME Case -->
     <div class="pcard reveal">
